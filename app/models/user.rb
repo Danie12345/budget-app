@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
-  has_many :groups, dependent: :delete_all, foreign_key: 'user_id'
+  has_many :groups, dependent: :delete_all, foreign_key: 'author_id'
   has_many :operations, dependent: :delete_all, foreign_key: 'author_id'
 
   validates :name, presence: true
