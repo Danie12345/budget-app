@@ -5,6 +5,7 @@ class CreateGroups < ActiveRecord::Migration[7.0]
       t.string :icon
       t.date :createdat
       t.references :user, null: false, foreign_key: true
+      t.references :operation, null: false, foreign_key: true
 
       t.timestamps
     end
