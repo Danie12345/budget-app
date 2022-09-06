@@ -1,1 +1,4 @@
-This is the splash screen!
+<div>
+  <%= button_to 'Login', new_user_session_path(), method: :get, data: { turbo: false } %>
+  <%= button_to 'Sign Up', new_user_registration_path(), method: :get, data: { turbo: false } %>
+</div>

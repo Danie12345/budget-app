@@ -1,4 +1,5 @@
 class OperationsController < ApplicationController
+  before_action :require_user
   before_action :set_operation, only: %i[show edit update destroy]
 
   # GET /operations or /operations.json
