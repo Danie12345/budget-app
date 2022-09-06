@@ -14,18 +14,16 @@ class OperationsController < ApplicationController
 
   # POST /operations or /operations.json
   def create
-    @operation = Operation.new(operation_params)
-    @group = Group.find(id: params[:group_id])
-
-    respond_to do |format|
-      if @operation.save
-        @group.operations << @operation
-        format.html { redirect_to operation_url(@operation), notice: 'Operation was successfully created.' }
-        format.json { render :show, status: :created, location: @operation }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @operation.errors, status: :unprocessable_entity }
-      end
+    @operation = Operation.new(operation_params.except(:group_id))
+    @group = Group.where(id: operation_params[:group_id]).first
+    if @group.nil?
+      return
+    end
+    if @operation.save
+      @group.operations << @operation
+      redirect_to group_operations_url(@group.id), notice: 'Operation was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -33,6 +31,6 @@ class OperationsController < ApplicationController
   
   # Only allow a list of trusted parameters through.
   def operation_params
-    params.require(:operation).permit(:name, :amount, :author_id)
+    params.require(:operation).permit(:name, :amount, :author_id, :group_id)
   end
 end
