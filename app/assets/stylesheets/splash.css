@@ -1,0 +1,59 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.splash-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.splash-logo {
+  display: flex;
+  width: 160px;
+  height: 160px;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+
+.splash-options > * > * {
+  width: 100%;
+  max-width: 380px;
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 28px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.splash-options > * {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-bottom: 12px;
+}
+
+.login-btn {
+  background-color: var(--main-bg-color);
+  color: white;
+}
+
+.signup-btn {
+  background-color: transparent;
+  color: var(--text-color);
+}
