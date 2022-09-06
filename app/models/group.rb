@@ -4,4 +4,8 @@ class Group < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
+
+  def all_operations
+    operations
+  end
 end
