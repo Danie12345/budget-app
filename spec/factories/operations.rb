@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :operation do
-    name { "MyString" }
-    amount { "" }
-    user { nil }
-    group { nil }
+    name { "Car" }
+    amount { 300.00 }
+    author_id { 1 }
   end
 end
