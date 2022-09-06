@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context 'validations' do
-    before do 
+    before do
       @user = create(:user)
     end
 
@@ -18,14 +18,14 @@ RSpec.describe User, type: :model do
         expect(@user).to_not be_valid
       end
     end
-    
+
     describe 'nil email' do
       it 'is not valid' do
         @user.name = nil
         expect(@user).to_not be_valid
       end
     end
-    
+
     describe 'nil password' do
       it 'is not valid' do
         @user.name = nil
