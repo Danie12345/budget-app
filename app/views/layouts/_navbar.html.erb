@@ -1,4 +1,7 @@
 <% if user_signed_in? %>
+  <%= link_to 'Home', root_path, method: :get, data: { turbo: false } %>
+  <%= link_to 'New Group', new_group_path, method: :get, data: { turbo: false } %>
+  <%= link_to 'New Operation', new_operation_path, method: :get, data: { turbo: false } %>
   <%= button_to 'Logout', destroy_user_session_path, method: :delete, data: { turbo: false } %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
