@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :operations
-  resources :groups
-  resources :users, only: [:show, :destroy, :splash]
+  resources :groups do
+    resources :operations, only: [:index]
+  end
+  resources :operations, only: [:new, :create, :edit, :update, :destroy]
   get '/get-started', to: 'users#splash'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
