@@ -7,15 +7,7 @@ RSpec.describe User, type: :model do
     end
 
     describe 'is valid' do
-      it 'when name is present' do
-        expect(@user).to be_valid
-      end
-
-      it 'when email is present' do
-        expect(@user).to be_valid
-      end
-
-      it 'when password is present' do
+      it 'when attributes are present' do
         expect(@user).to be_valid
       end
     end
