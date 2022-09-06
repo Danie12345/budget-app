@@ -12,10 +12,10 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   def groups
-    Group.where(user_id: self.id).inludes(:operations).all
+    Group.where(user_id: self.id).all
   end
 
   def operations
-    Operation.where(user_id: self.id).includes(:groups).all
+    Operation.where(user_id: self.id).all
   end
 end

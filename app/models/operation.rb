@@ -10,8 +10,4 @@ class Operation < ApplicationRecord
       groups.first.id
     end
   end
-
-  def groups
-    groups
-  end
 end
