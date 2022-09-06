@@ -1,5 +1,6 @@
 class OperationsController < ApplicationController
   before_action :require_user
+  before_action :set_client
 
   # GET /operations or /operations.json
   def index
@@ -8,7 +9,6 @@ class OperationsController < ApplicationController
 
   # GET /operations/new
   def new
-    @client = current_user
     @operation = Operation.new
   end
 

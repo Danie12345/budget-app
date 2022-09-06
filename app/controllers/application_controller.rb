@@ -4,4 +4,11 @@ class ApplicationController < ActionController::Base
       redirect_to get_started_path
     end
   end
+
+  private
+  
+  # Set client
+  def set_client
+    @client = current_user
+  end
 end
