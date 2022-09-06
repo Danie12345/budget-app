@@ -22,13 +22,7 @@
   </div>
 
   <div>
-    <%= form.label :createdat, style: "display: block" %>
-    <%= form.date_field :createdat %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.hidden_field :user_id, value: @client.id %>
   </div>
 
   <div>
