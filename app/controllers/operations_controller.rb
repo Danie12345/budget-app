@@ -19,9 +19,8 @@ class OperationsController < ApplicationController
     set_client
     @operation = Operation.new(operation_params.except(:group_ids))
     @groups = Group.where(id: operation_params[:group_ids])
-    if @groups.first.nil?
-      return
-    end
+    return if @groups.first.nil?
+
     if @operation.save
       @groups.each do |group|
         group.operations << @operation
@@ -33,7 +32,7 @@ class OperationsController < ApplicationController
   end
 
   private
-  
+
   # Only allow a list of trusted parameters through.
   def operation_params
     params.require(:operation).permit(:name, :amount, group_ids: []).merge(author_id: @client.id)

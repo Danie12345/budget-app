@@ -1,15 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery prepend: true
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   def require_user
-    unless current_user
-      redirect_to get_started_path
-    end
+    redirect_to get_started_path unless current_user
   end
-  
+
   private
-  
+
   # Set client
   def set_client
     @client = current_user

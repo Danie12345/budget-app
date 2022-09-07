@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'Groups', type: :feature do
   let(:user) { create(:user) }
-  
+
   before(:each) do
     user.confirm
     sign_in(user)
     @g1 = create(:group, user:)
-    @g2 = create(:group, user:, name: 'another category')    
+    @g2 = create(:group, user:, name: 'another category')
   end
 
   describe 'index page' do

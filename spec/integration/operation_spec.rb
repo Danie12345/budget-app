@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Operations', type: :feature do
   let(:user) { create(:user) }
-  
+
   before(:each) do
     user.confirm
     sign_in(user)

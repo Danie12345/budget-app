@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :feature do
   let(:user) { build(:user) }
-  
+
   context 'visit get started page' do
     before(:example) do
       visit get_started_path

@@ -6,8 +6,6 @@ class Operation < ApplicationRecord
   validates :amount, presence: true
 
   def group_id
-    unless groups.first.nil?
-      groups.first.id
-    end
+    groups.first&.id
   end
 end
