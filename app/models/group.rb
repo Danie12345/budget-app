@@ -5,11 +5,7 @@ class Group < ApplicationRecord
   validates :name, presence: true
   validates :icon, presence: true, format: { with: %r{\.png|jpg|jpeg|gif}i, message: "Use an image or video with formats: png, jpg, jpeg or gif." }
 
-  def all_operations
-    operations
-  end
-
   def total
-    all_operations.sum(:amount)
+    operations.sum(:amount)
   end
 end
