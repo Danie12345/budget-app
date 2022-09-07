@@ -5,7 +5,11 @@
   </p>
 
   <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
+    <%= image_tag group.icon, :size => "100x100" %>
+  </p>
+
+  <p>
+    <strong>Total:</strong>
+    $<%= group.total %>
   </p>
 </div>

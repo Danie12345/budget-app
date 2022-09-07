@@ -4,9 +4,10 @@
 
 <div id="groups">
   <% @groups.each do |group| %>
-    <%= render group %>
     <p>
-      <%= link_to "Show this group", group_operations_path(group.id) %>
+      <%= link_to group_operations_path(group.id) do %>
+        <%= render group %>
+      <% end %>
     </p>
   <% end %>
 </div>
