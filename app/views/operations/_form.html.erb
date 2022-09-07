@@ -1,4 +1,4 @@
-<%= form_with model: @operation, url: operations_path do |form| %>
+<%= form_with model: @operation, url: operations_path, data: { turbo: false } do |form| %>
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
@@ -10,15 +10,11 @@
   </div>
 
   <div>
-    <%= form.hidden_field :author_id, value: @client.id %>
-  </div>
-
-  <div>
     <%= form.label :groups, style: "display: block" %>
-    <%= form.collection_check_boxes(:group_ids, @client.groups.order(created_at: :desc), :id, :name) %>
+    <%= form.collection_check_boxes(:group_ids, @client.groups, :id, :name) %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Save' %>
   </div>
 <% end %>

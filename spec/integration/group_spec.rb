@@ -53,7 +53,7 @@ RSpec.describe 'Groups', type: :feature do
     end
 
     it 'shows submit button' do
-      expect(page).to have_button('Create Group')
+      expect(page).to have_button('Save')
     end
 
     it 'shows a cancel button' do
@@ -63,7 +63,7 @@ RSpec.describe 'Groups', type: :feature do
     it 'creates a new group and redirects to the new group' do
       fill_in 'Name', with: 'Languages'
       fill_in 'Icon', with: 'https://cdn-icons-png.flaticon.com/512/1465/1465569.png'
-      click_button 'Create Group'
+      click_button 'Save'
       group = Group.last
       expect(page).to have_current_path(group_operations_path(group.id))
     end

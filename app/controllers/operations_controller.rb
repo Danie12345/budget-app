@@ -16,6 +16,7 @@ class OperationsController < ApplicationController
 
   # POST /operations or /operations.json
   def create
+    set_client
     @operation = Operation.new(operation_params.except(:group_ids))
     @groups = Group.where(id: operation_params[:group_ids])
     if @groups.first.nil?
@@ -35,6 +36,6 @@ class OperationsController < ApplicationController
   
   # Only allow a list of trusted parameters through.
   def operation_params
-    params.require(:operation).permit(:name, :amount, :author_id, group_ids: [])
+    params.require(:operation).permit(:name, :amount, group_ids: []).merge(author_id: @client.id)
   end
 end
