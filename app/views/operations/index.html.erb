@@ -1,7 +1,8 @@
 <p style="color: green"><%= notice %></p>
 <%= link_to root_path do %> < Back <% end %>
 
-<h1>Operations</h1>
+<h1><%= @group.name %></h1>
+<div>Total: $<%= @group.total %></div>
 
 <div id="operations">
   <% @operations.each do |operation| %>

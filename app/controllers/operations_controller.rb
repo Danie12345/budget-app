@@ -5,7 +5,8 @@ class OperationsController < ApplicationController
 
   # GET /operations or /operations.json
   def index
-    @operations = Group.find(params[:group_id]).operations
+    @group = Group.find(params[:group_id])
+    @operations = @group.operations
   end
 
   # GET /operations/new
