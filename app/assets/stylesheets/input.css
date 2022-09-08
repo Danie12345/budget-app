@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Montserrat";
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+}
+
 /* vars */
 
 .blue {
@@ -17,14 +22,32 @@
 }
 
 .headline {
-  font-family: 'proxima-nova';
+  font-family: 'Montserrat';
   font-weight: bold;
+  font-size: 28px;
 }
 
 .gral-text {
-  font-family: 'proxima-nova';
+  font-family: 'Monsterrat';
   font-weight: light;
 }
+
+.view-children {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: calc(100vh - 32px);
+}
+
+.lists {
+  overflow-y: auto;
+  display: block;
+  width: 100%;
+  height: calc(100vh - 32px - 80px - 32px);
+}
+
+/* layers */
 
 @layer base {
   input {
@@ -37,5 +60,13 @@
 
   menu {
     @apply gral-text;
+  }
+
+  .view-child {
+    @apply view-children;
+  }
+
+  .list {
+    @apply lists;
   }
 }
