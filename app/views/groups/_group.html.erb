@@ -1,15 +1,16 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>Name:</strong>
-    <%= group.name %>
-  </p>
-
-  <p>
-    <%= image_tag group.icon, :size => "100x100" %>
-  </p>
-
-  <p>
-    <strong>Total:</strong>
-    $<%= group.total %>
-  </p>
+<div class="card group" id="<%= dom_id group %>">
+  <div class="image">
+    <%= image_tag group.icon %>
+  </div>
+  <div class="data">
+    <span>
+      <%= group.name.capitalize %>
+    </span>
+    <span>
+      <small><%= group.updated_at.to_date %></small>
+    </span>
+    <span>
+      <strong>$<%= group.total %></strong>
+    </span>
+  </div>
 </div>

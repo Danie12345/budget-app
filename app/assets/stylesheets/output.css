@@ -600,6 +600,10 @@ menu {
   display: none;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 @font-face {
   font-family: "Montserrat";
 

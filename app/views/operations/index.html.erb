@@ -1,7 +1,7 @@
 <div class="view-child">
   <div class="view-top">
     <%= link_to root_path do %> < Back <% end %>
-    <h1 class="view-title"><%= @group.name %></h1>
+    <h1 class="view-title"><%= @group.name.capitalize %></h1>
     <div>Total: $<%= @group.total %></div>
   </div>
   <div class="list" id="operations">
@@ -9,7 +9,7 @@
       <%= render operation %>
     <% end %>
   </div>
-  <div class="new-btn">
+  <div class="add-btn">
     <%= link_to "New", new_operation_path %>
   </div>
 </div>
