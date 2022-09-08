@@ -17,15 +17,15 @@ class OperationsController < ApplicationController
   def create
     @operation = Operation.new(operation_params.except(:group_ids))
     @groups = Group.where(id: operation_params[:group_ids])
-    return if @groups.first.nil?
-
-    if @operation.save
+    if @groups.empty?
+      redirect_to new_operation_path, notice: 'Operations need at least 1 group!'
+    elsif @operation.save
       @groups.each do |group|
         group.operations << @operation
       end
-      redirect_to root_path, notice: 'Operation was successfully created.'
+      redirect_to root_path, notice: 'Operation was successfully created!'
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_operation_path, notice: 'Cannot create operation with provided info!'
     end
   end
 

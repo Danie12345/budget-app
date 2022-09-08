@@ -48,6 +48,12 @@ gem 'cancancan'
 
 gem 'dotenv-rails'
 
+gem "validate_url"
+
+gem 'faraday'
+
+gem 'httparty'
+
 # https://github.com/heartcombo/devise
 gem 'devise', github: 'heartcombo/devise', branch: 'main'
 
