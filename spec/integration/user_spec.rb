@@ -65,7 +65,7 @@ RSpec.describe 'Users', type: :feature do
         expect(page).to have_link('receive confirmation instructions')
       end
 
-      it 'redirects to the home page when the user fills in the fields and clicks the sign up button' do
+      it 'redirects to the log in page when the user signs up' do
         fill_in 'Name', with: user.name
         fill_in 'Email', with: user.email
         fill_in 'Password', with: user.password
