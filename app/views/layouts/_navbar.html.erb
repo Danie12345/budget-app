@@ -1,16 +1,18 @@
 <% if user_signed_in? %>
-  <button data-action="click->toggle#menu" class="hamburger hamburger--elastic" type="button" aria-label="Menu" aria-controls="navigation">
-    <div data-toggle-target="burger">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-    <div data-toggle-target="close" class="hidden">
-      <i class="fa-solid fa-xmark"></i>
-    </div>
-  </button>
+  <div class="navbtn">
+    <button data-action="click->toggle#menu" class="hamburger hamburger--elastic" type="button" aria-label="Menu" aria-controls="navigation">
+      <div data-toggle-target="burger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div data-toggle-target="close" class="hidden">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </button>
+  </div>
   <div data-toggle-target="menu" class="menu">
-    <%= link_to 'Home', root_path, method: :get, data: { turbo: false } %>
-    <%= link_to 'New Group', new_group_path, method: :get, data: { turbo: false } %>
-    <%= link_to 'New Operation', new_operation_path, method: :get, data: { turbo: false } %>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete, data: { turbo: false } %>
+    <%= link_to 'Home', root_path, method: :get %>
+    <%= link_to 'New Group', new_group_path, method: :get %>
+    <%= link_to 'New Operation', new_operation_path, method: :get %>
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete, data: { turbo: false, action: 'click->toggle#menu' } %>
   </div>
 <% end %>

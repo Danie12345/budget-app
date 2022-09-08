@@ -1,8 +1,8 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static targets = ['menu', 'burger', 'close', 'view']
-  static values = { open: { type: Boolean, default:false } }
+  static targets = ['menu', 'burger', 'close', 'view', 'notice']
+  static values = { open: { type: Boolean, default:false }, test: { type: String, default: '' } }
 
   initialize() {}
 
@@ -13,6 +13,21 @@ export default class extends Controller {
         this.hide();
       }
     }, false);
+  }
+  
+  timeoutNotice() {
+    if (this.testValue != '') {
+      setTimeout(() => {
+        this.noticeTarget.classList.add('active');
+      }, 1000);
+      setTimeout(() => {
+        this.noticeTarget.classList.remove('active');
+      }, 3500);
+    }
+  }
+
+  testValueChanged() {
+    this.timeoutNotice();
   }
 
   menu() {

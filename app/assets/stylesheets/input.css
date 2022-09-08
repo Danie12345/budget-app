@@ -26,7 +26,6 @@
   font-weight: light;
 }
 
-
 @layer base {
   input {
     @apply bg-blue-100;
