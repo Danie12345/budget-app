@@ -1,12 +1,15 @@
-<%= link_to root_path do %> < Back <% end %>
-
-<h1><%= @group.name %></h1>
-<div>Total: $<%= @group.total %></div>
-
-<div id="operations">
-  <% @operations.each do |operation| %>
-    <%= render operation %>
-  <% end %>
+<div class="view-child">
+  <div class="view-top">
+    <%= link_to root_path do %> < Back <% end %>
+    <h1 class="view-title"><%= @group.name %></h1>
+    <div>Total: $<%= @group.total %></div>
+  </div>
+  <div class="list" id="operations">
+    <% @operations.each do |operation| %>
+      <%= render operation %>
+    <% end %>
+  </div>
+  <div class="new-btn">
+    <%= link_to "New", new_operation_path %>
+  </div>
 </div>
-
-<%= link_to "New", new_operation_path %>
