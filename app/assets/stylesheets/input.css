@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* vars */
+
+.blue {
+  background-color: #3778c2;
+}
+
+.green {
+  background-color: #5fb523;
+}
+
+.gray {
+  color: #434b54;
+}
+
+
+@layer base {
+  input {
+    @apply bg-blue-100;
+  }
+
+  .menu {
+    @apply bg-blue-50;
+  }
+}
