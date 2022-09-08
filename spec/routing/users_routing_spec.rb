@@ -35,31 +35,31 @@ RSpec.describe UsersController, type: :routing do
     end
 
     it 'routes to registrations#cancel via GET' do
-      expect(get: '/users/cancel').to route_to('devise/registrations#cancel')
+      expect(get: '/users/cancel').to route_to('registrations#cancel')
     end
 
     it 'routes to registrations#new via GET' do
-      expect(get: '/users/sign_up').to route_to('devise/registrations#new')
+      expect(get: '/users/sign_up').to route_to('registrations#new')
     end
 
     it 'routes to registrations#edit via GET' do
-      expect(get: '/users/edit').to route_to('devise/registrations#edit')
+      expect(get: '/users/edit').to route_to('registrations#edit')
     end
 
-    it 'routes to registrations#new via PATCH' do
-      expect(patch: '/users').to route_to('devise/registrations#update')
+    it 'routes to registrations#edit via PATCH' do
+      expect(patch: '/users').to route_to('registrations#update')
     end
 
-    it 'routes to registrations#new via PUT' do
-      expect(put: '/users').to route_to('devise/registrations#update')
+    it 'routes to registrations#edit via PUT' do
+      expect(put: '/users').to route_to('registrations#update')
     end
 
-    it 'routes to registrations#new via DELETE' do
-      expect(delete: '/users').to route_to('devise/registrations#destroy')
+    it 'routes to registrations#destroy via DELETE' do
+      expect(delete: '/users').to route_to('registrations#destroy')
     end
 
-    it 'routes to registrations#new via POST' do
-      expect(post: '/users').to route_to('devise/registrations#create')
+    it 'routes to registrations#create via POST' do
+      expect(post: '/users').to route_to('registrations#create')
     end
 
     it 'routes to registrations#new via GET' do

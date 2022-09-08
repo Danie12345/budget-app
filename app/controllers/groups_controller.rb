@@ -1,10 +1,13 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :require_user
+  before_action :authenticate_user!, except: [:index]
   before_action :set_client
 
   # GET /groups or /groups.json
   def index
+    if @client.nil?
+      redirect_to get_started_path
+      return
+    end
     @groups = current_user.groups
   end
 

@@ -1,6 +1,5 @@
 class OperationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_user
   before_action :set_client
 
   # GET /operations or /operations.json
@@ -16,7 +15,6 @@ class OperationsController < ApplicationController
 
   # POST /operations or /operations.json
   def create
-    set_client
     @operation = Operation.new(operation_params.except(:group_ids))
     @groups = Group.where(id: operation_params[:group_ids])
     return if @groups.first.nil?
