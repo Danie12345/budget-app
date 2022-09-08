@@ -2,7 +2,7 @@
   position: fixed;
   transition: all 0.5s ease;
   width: 100%;
-  height: calc(100% - 32px);
+  height: calc(100% - var(--top-height));
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -24,7 +24,7 @@
 
 .view-top {
   background-color: transparent;
-  height: 32px;
+  height: var(--top-height);
   display: flex;
   color: white;
   justify-content: space-around;
@@ -100,6 +100,10 @@ div.operation > div.data > span {
   flex-wrap: wrap;
   width: 68%;
   gap: 12px;
+}
+
+.card-text {
+  color: var(--text-color);
 }
 
 .add-btn {

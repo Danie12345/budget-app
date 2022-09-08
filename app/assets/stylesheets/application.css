@@ -29,9 +29,14 @@ body {
   --text-color: #434b54;
   --headline-font: 'Montserrat';
   --text-font: 'Montserrat';
+  --top-height: 32px;
 }
 
 ul,
 li {
   list-style: none;
+}
+
+p {
+  display: none;
 }
