@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= stub input.css
  *= require_tree .
  *= require_self
  */
@@ -26,4 +27,9 @@
   --main-bg-color: #3778c2;
   --second-bg-color: #5fb523;
   --text-color: #434b54;
+}
+
+ul,
+li {
+  list-style: none;
 }
