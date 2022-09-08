@@ -8,12 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/1097d30f85.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div>
+    <div data-controller="toggle">
       <%= render "layouts/navbar" %>
+      <div data-toggle-target="view" class="view">
+        <%= yield %>
+      </div>
     </div>
-    <%= yield %>
   </body>
 </html>
