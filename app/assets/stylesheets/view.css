@@ -87,6 +87,7 @@ div.operation > div.data > span {
 
 .image {
   width: 28%;
+  max-width: 90px;
   height: contain;
   display: flex;
   justify-content: center;
