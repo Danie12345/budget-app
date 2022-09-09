@@ -11,6 +11,9 @@
           <% end %>
         </p>
       <% end %>
+      <% if @groups.empty? %>
+        <%= render "shared/empty", msg: 'groups' %>
+      <% end %>
     </div>
     <% if can? :manage, Group %>
       <div class="add-btn">

@@ -9,6 +9,9 @@
       <% @operations.each do |operation| %>
         <%= render operation %>
       <% end %>
+      <% if @operations.empty? %>
+        <%= render "shared/empty", msg: 'operations' %>
+      <% end %>
     </div>
     <% if can? :manage, Operation %>
       <div class="add-btn">
