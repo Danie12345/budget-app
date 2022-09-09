@@ -64,9 +64,11 @@
 .login-btn {
   background-color: var(--main-bg-color);
   color: white;
+  align-self: center;
 }
 
 .signup-btn {
   background-color: transparent;
   color: var(--text-color);
+  align-self: center;
 }
