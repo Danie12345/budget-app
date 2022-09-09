@@ -410,11 +410,6 @@ video {
   height: auto;
 }
 
-input {
-  --tw-bg-opacity: 1;
-  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
-}
-
 body {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
   --tw-gradient-from: #93c5fd;

@@ -50,10 +50,6 @@
 /* layers */
 
 @layer base {
-  input {
-    @apply bg-blue-100;
-  }
-
   body {
     @apply bg-gradient-to-tr from-blue-300 blue;
   }

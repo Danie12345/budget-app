@@ -1,19 +1,14 @@
 <%= form_with model: @operation, url: operations_path do |form| %>
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: :name %>
   </div>
-
   <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, placeholder: :amount %>
   </div>
-
-  <div>
-    <%= form.label :groups, style: "display: block" %>
+  <div class="checks check-groups">
+    <%= form.label :groups %>
     <%= form.collection_check_boxes(:group_ids, @client.groups, :id, :name) %>
   </div>
-
   <div>
     <%= form.submit 'Save' %>
   </div>

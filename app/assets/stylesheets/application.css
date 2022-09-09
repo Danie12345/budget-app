@@ -40,3 +40,33 @@ li {
 p {
   display: none;
 }
+
+.checks {
+  border: none !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checks label {
+  width: calc(100% - 25px);
+  margin-left: 4px;
+}
+
+.check-groups {
+  overflow-y: auto;
+  max-height: 108px;
+  margin-top: 24px;
+}
+
+.check-groups > label:nth-child(1) {
+  width: 100% !important;
+  margin: 0;
+  margin-top: -24px;
+  position: fixed;
+  z-index: 100;
+}
+
+.checks > input {
+  width: unset !important;
+}
