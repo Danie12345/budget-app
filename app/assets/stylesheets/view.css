@@ -2,6 +2,7 @@
   position: fixed;
   transition: all 0.5s ease;
   width: 100%;
+  max-width: 768px;
   height: calc(100% - var(--top-height));
   display: flex;
   flex-direction: column;
