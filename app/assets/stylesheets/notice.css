@@ -21,3 +21,7 @@
 #notice.active {
   transform: translateY(var(--notice-height));
 }
+
+.notices {
+  display: unset !important;
+}

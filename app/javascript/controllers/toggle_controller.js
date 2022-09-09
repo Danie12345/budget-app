@@ -2,11 +2,12 @@ import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
   static targets = ['menu', 'burger', 'close', 'view', 'notice']
-  static values = { open: { type: Boolean, default:false }, test: { type: String, default: '' } }
+  static values = { open: { type: Boolean, default:false }, notice: { type: String, default: '' } }
 
   initialize() {}
 
   connect() {
+    console.log('connected');
     document.addEventListener('click', (e) => {    
       var tag = e.target.closest('a') || '';
       if (tag != '') {
@@ -16,7 +17,9 @@ export default class extends Controller {
   }
   
   timeoutNotice() {
-    if (this.testValue != '') {
+    console.log('trying to show notice');
+    if (this.noticeValue != '') {
+      console.log('we show notice here');
       setTimeout(() => {
         this.noticeTarget.classList.add('active');
       }, 1000);
@@ -26,7 +29,7 @@ export default class extends Controller {
     }
   }
 
-  testValueChanged() {
+  noticeValueChanged() {
     this.timeoutNotice();
   }
 
