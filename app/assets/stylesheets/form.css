@@ -25,18 +25,18 @@
   height: 100%;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .form-view > form {
   margin-top: 16px;
   height: auto;
   background-color: white;
   box-sizing: border-box;
   padding: 4%;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
 
 .not-logged div:not(:first-child):nth-last-child(n+3),

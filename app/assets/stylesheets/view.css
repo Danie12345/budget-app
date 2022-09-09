@@ -34,9 +34,6 @@
 .view-title {
   text-align: center;
   font-weight: bold;
-}
-
-.view-title {
   vertical-align: middle;
 }
 
@@ -67,6 +64,15 @@
   width: 100%;
 }
 
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 68%;
+  gap: 12px;
+}
+
 .operation .data {
   gap: 2px;
   width: 100%;
@@ -86,19 +92,9 @@ div.operation > div.data > span {
 .image {
   width: 28%;
   max-width: 90px;
-  height: contain;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.data {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 68%;
-  gap: 12px;
 }
 
 .card-text {
