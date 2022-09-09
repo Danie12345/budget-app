@@ -2,15 +2,19 @@
 
 ## Budget App
 
-> A classic budget app made with Rails.
+> A classic budget app to keep track of your expenses by category, made with Rails, Turbo's Stimulus and Tailwindcss. It includes full user authentication and authorization. It also has fully tested functionality with unit tests and integration tests. Built within a week's work.
+
+> Check out the free [Heroku demo](https://capstone-coin-track.herokuapp.com/)
 
 ## Built With
 
 - Ruby on Rails
 - PostgreSQL
-- devise / devise-jwt
-- cancancan
-- rspec/rails
+- devise & cancancan
+- rspec/rails & capybara
+- bullet
+- turbo & stimulus
+- tailwindcss
 
 ### Getting Started
 
@@ -88,3 +92,9 @@ Feel free to check the [issues page](https://github.com/Danie12345/budget-app/is
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+---
+
+## Template
+
+Full thank you to [Gregoire Vella](https://www.behance.net/gregoirevella) on [Behance](https://www.behance.net/) for the awesome [Snapscan - iOs design and branding](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding) template! :)
