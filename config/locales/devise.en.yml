@@ -34,8 +34,8 @@ en:
       no_token: "You can't access this without a password reset email."
       send_instructions: "Check your email to reset your password."
       send_paranoid_instructions: "Check your email in a few minutes."
-      updated: "Your password has been changed. You're now signed in."
-      updated_not_active: "Your password has been changed successfully."
+      updated: "Your password has been changed!"
+      updated_not_active: "Your password has been changed!"
     registrations:
       destroyed: "Your account has been cancelled!"
       signed_up: "You've registered successfully!"
