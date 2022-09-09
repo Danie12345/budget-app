@@ -1,22 +1,13 @@
-<div id="<%= dom_id operation %>">
-  <p>
-    <strong>Name:</strong>
-    <%= operation.name %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= operation.amount %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= operation.user_id %>
-  </p>
-
-  <p>
-    <strong>Group:</strong>
-    <%= operation.group_id %>
-  </p>
-
+<div class="card operation" id="<%= dom_id operation %>">
+  <div class="data">
+    <span class="card-text">
+      <%= operation.name.capitalize %>
+    </span>
+    <span class="card-text">
+      <small><%= operation.updated_at.to_date %></small>
+    </span>
+    <span>
+      <strong>$<%= operation.amount %></strong>
+    </span>
+  </div>
 </div>

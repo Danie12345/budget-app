@@ -1,0 +1,27 @@
+:root {
+  --main-bg-color: #3778c2;
+  --second-bg-color: #5fb523;
+  --text-color: #434b54;
+  --notice-height: 32px;
+}
+
+#notice {
+  position: fixed;
+  bottom: 100vh;
+  height: var(--notice-height);
+  transition: all 0.5s ease;
+  width: 100%;
+  z-index: 10000;
+  box-sizing: border-box;
+  padding: 3px;
+  color: white;
+  background-color: var(--main-bg-color);
+}
+
+#notice.active {
+  transform: translateY(var(--notice-height));
+}
+
+.notices {
+  display: unset !important;
+}

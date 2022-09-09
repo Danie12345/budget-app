@@ -1,22 +1,16 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>Name:</strong>
-    <%= group.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
-
-  <p>
-    <strong>Createdat:</strong>
-    <%= group.createdat %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= group.user_id %>
-  </p>
-
+<div class="card group" id="<%= dom_id group %>">
+  <div class="image">
+    <%= image_tag group.icon %>
+  </div>
+  <div class="data">
+    <span class="card-text">
+      <%= group.name.capitalize %>
+    </span>
+    <span class="card-text">
+      <small><%= group.updated_at.to_date %></small>
+    </span>
+    <span>
+      <strong>$<%= group.total %></strong>
+    </span>
+  </div>
 </div>

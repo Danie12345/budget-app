@@ -4,4 +4,8 @@ class Operation < ApplicationRecord
 
   validates :name, presence: true
   validates :amount, presence: true
+
+  def group_id
+    groups.first&.id
+  end
 end

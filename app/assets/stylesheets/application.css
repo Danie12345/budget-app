@@ -10,6 +10,81 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= stub input.css
  *= require_tree .
  *= require_self
  */
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 768px;
+}
+
+:root {
+  --main-bg-color: #3778c2;
+  --second-bg-color: #5fb523;
+  --text-color: #434b54;
+  --headline-font: 'Montserrat';
+  --text-font: 'Montserrat';
+  --top-height: 32px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+p {
+  display: none;
+}
+
+.checks {
+  border: none !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checks label {
+  width: calc(100% - 25px);
+  margin-left: 4px;
+}
+
+.check-groups {
+  overflow-y: auto;
+  max-height: 108px;
+  margin-top: 24px;
+}
+
+.check-groups > label:nth-child(1) {
+  width: 100% !important;
+  margin: 0;
+  margin-top: -24px;
+  position: fixed;
+  z-index: 100;
+}
+
+.checks > input {
+  width: unset !important;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#notice {
+  display: unset;
+}

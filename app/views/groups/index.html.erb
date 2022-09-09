@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New group", new_group_path %>
+<% if can? :read, Group %>
+  <div class="view-child">
+    <div class="view-top">
+      <h1 class="view-title">Groups</h1>
+    </div>
+    <div class="list" id="groups">
+      <% @groups.each do |group| %>
+        <p>
+          <%= link_to group_operations_path(group.id) do %>
+            <%= render group %>
+          <% end %>
+        </p>
+      <% end %>
+      <% if @groups.empty? %>
+        <%= render "shared/empty", msg: 'groups' %>
+      <% end %>
+    </div>
+    <% if can? :manage, Group %>
+      <div class="add-btn">
+        <%= link_to "New", new_group_path %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

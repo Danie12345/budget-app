@@ -10,4 +10,12 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :password, presence: true
   validates :email, presence: true
+
+  def groups
+    Group.where(user_id: id).all
+  end
+
+  def operations
+    Operation.where(user_id: id).all
+  end
 end

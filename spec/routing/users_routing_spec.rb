@@ -2,36 +2,76 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :routing do
   describe 'routing' do
-    it 'routes to #index' do
-      expect(get: '/users').to route_to('users#index')
+    it 'routes to sessions#new via GET' do
+      expect(get: '/users/sign_in').to route_to('devise/sessions#new')
     end
 
-    it 'routes to #new' do
-      expect(get: '/users/new').to route_to('users#new')
+    it 'routes to sessions#create via POST' do
+      expect(post: '/users/sign_in').to route_to('devise/sessions#create')
     end
 
-    it 'routes to #show' do
-      expect(get: '/users/1').to route_to('users#show', id: '1')
+    it 'routes to sessions#destroy via DELETE' do
+      expect(delete: '/users/sign_out').to route_to('devise/sessions#destroy')
     end
 
-    it 'routes to #edit' do
-      expect(get: '/users/1/edit').to route_to('users#edit', id: '1')
+    it 'routes to passwords#mew via GET' do
+      expect(get: '/users/password/new').to route_to('devise/passwords#new')
     end
 
-    it 'routes to #create' do
-      expect(post: '/users').to route_to('devise/registrations#create')
+    it 'routes to passwords#edit via GET' do
+      expect(get: '/users/password/edit').to route_to('devise/passwords#edit')
     end
 
-    it 'routes to #update via PUT' do
-      expect(put: '/users/1').to route_to('users#update', id: '1')
+    it 'routes to passwords#update via PATCH' do
+      expect(patch: '/users/password').to route_to('devise/passwords#update')
     end
 
-    it 'routes to #update via PATCH' do
-      expect(patch: '/users/1').to route_to('users#update', id: '1')
+    it 'routes to passwords#update via PUT' do
+      expect(put: '/users/password').to route_to('devise/passwords#update')
     end
 
-    it 'routes to #destroy' do
-      expect(delete: '/users/1').to route_to('users#destroy', id: '1')
+    it 'routes to passwords#create via POST' do
+      expect(post: '/users/password').to route_to('devise/passwords#create')
+    end
+
+    it 'routes to registrations#cancel via GET' do
+      expect(get: '/users/cancel').to route_to('registrations#cancel')
+    end
+
+    it 'routes to registrations#new via GET' do
+      expect(get: '/users/sign_up').to route_to('registrations#new')
+    end
+
+    it 'routes to registrations#edit via GET' do
+      expect(get: '/users/edit').to route_to('registrations#edit')
+    end
+
+    it 'routes to registrations#edit via PATCH' do
+      expect(patch: '/users').to route_to('registrations#update')
+    end
+
+    it 'routes to registrations#edit via PUT' do
+      expect(put: '/users').to route_to('registrations#update')
+    end
+
+    it 'routes to registrations#destroy via DELETE' do
+      expect(delete: '/users').to route_to('registrations#destroy')
+    end
+
+    it 'routes to registrations#create via POST' do
+      expect(post: '/users').to route_to('registrations#create')
+    end
+
+    it 'routes to registrations#new via GET' do
+      expect(get: '/users/confirmation/new').to route_to('devise/confirmations#new')
+    end
+
+    it 'routes to registrations#new via GET' do
+      expect(get: '/users/confirmation').to route_to('devise/confirmations#show')
+    end
+
+    it 'routes to registrations#new via POST' do
+      expect(post: '/users/confirmation').to route_to('devise/confirmations#create')
     end
   end
 end

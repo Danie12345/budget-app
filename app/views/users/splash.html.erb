@@ -1,0 +1,10 @@
+<div class="splash-container">
+  <div class="splash-logo-container">
+    <%= image_tag("logo.png", alt: 'Coin Track Logo', class: "logo-ico") %>
+    <span class="coin-track">Coin Track</span>
+  </div>
+  <div class="splash-options">
+    <%= button_to 'Log In', new_user_session_path(), method: :get, class: "login-btn" %>
+    <%= button_to 'Sign Up', new_user_registration_path(), method: :get, class: "signup-btn" %>
+  </div>
+</div>
