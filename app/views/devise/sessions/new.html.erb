@@ -4,7 +4,7 @@
     <h2 class="form-title">Log In</h2>
   </div>
   <div class="form-view not-logged">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
       <div>
         <%= f.email_field :email, placeholder: :email, autofocus: true, autocomplete: "email" %>
       </div>

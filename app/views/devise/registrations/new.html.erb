@@ -4,7 +4,7 @@
     <h2 class="form-title">Register</h2>
   </div>
   <div class="form-view not-logged">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
       <div>
         <%= f.text_field :name, placeholder: :name, autofocus: true, autocomplete: "name" %>
       </div>

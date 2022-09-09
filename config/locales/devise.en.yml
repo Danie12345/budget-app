@@ -5,7 +5,7 @@ en:
     confirmations:
       confirmed: "Your email address has been confirmed!"
       send_instructions: "Check your email to confirm your account!"
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_paranoid_instructions: "Check your email again in a few minutes!"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -31,19 +31,19 @@ en:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password has been changed successfully. You are now signed in."
+      no_token: "You can't access this without a password reset email."
+      send_instructions: "Check your email to reset your password."
+      send_paranoid_instructions: "Check your email in a few minutes."
+      updated: "Your password has been changed. You're now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
-      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      destroyed: "Your account has been cancelled!"
       signed_up: "You've registered successfully!"
       signed_up_but_inactive: "Account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_locked: "You have signed up, but the account is locked."
       signed_up_but_unconfirmed: "Account is not yet confirmed."
       update_needs_confirmation: "Check your email to confirm your account."
-      updated: "Your account has been updated successfully."
+      updated: "Your account has been updated!"
       updated_but_not_signed_in: "Please sign in again."
     sessions:
       signed_in: "Welcome! :)"
@@ -51,13 +51,13 @@ en:
       signed_out: "Goodbye! :)"
       already_signed_out: "Goodbye! :)"
     unlocks:
-      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      send_instructions: "Check your email to reset your password!"
+      send_paranoid_instructions: "Check again in a few minutes!"
+      unlocked: "Your account has been unlocked!"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs confirming within %{period}, please request a new one"
+      confirmation_period_expired: "needs confirming within %{period}, request a new one"
       expired: "has expired, please request a new one"
       not_found: "not found"
       not_locked: "was not locked"

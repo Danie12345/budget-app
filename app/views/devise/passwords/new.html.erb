@@ -4,7 +4,7 @@
     <h2 class="form-title">Forgot your password?</h2>
   </div>
   <div class="form-view not-logged">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, data: { turbo: false }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div>
         <%= f.email_field :email, placeholder: :email, autofocus: true, autocomplete: "email" %>
