@@ -8,25 +8,24 @@ class ApplicationController < ActionController::Base
 
   def image_exists?(url_string)
     return false unless url_exists?(url_string)
+
     response = {}
     uri = URI(url_string)
     begin
-      Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+      Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
         request = Net::HTTP::Get.new uri
         response = http.request request # Net::HTTPResponse object
       end
-      return response.content_type.starts_with?("image")
-    rescue => exception
-      return false
+      response.content_type.starts_with?('image')
+    rescue StandardError
+      false
     end
   end
 
   def url_exists?(url)
-    begin
-      Faraday.get(url).status
-    rescue => exception
-      false
-    end
+    Faraday.get(url).status
+  rescue StandardError
+    false
   end
 
   private

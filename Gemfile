@@ -48,7 +48,7 @@ gem 'cancancan'
 
 gem 'dotenv-rails'
 
-gem "validate_url"
+gem 'validate_url'
 
 gem 'faraday'
 
