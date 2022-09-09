@@ -1,15 +1,19 @@
-<div class="view-child">
-  <div class="view-top">
-    <%= link_to root_path do %> < Back <% end %>
-    <h1 class="view-title"><%= @group.name.capitalize %></h1>
-    <div>Total: $<%= @group.total %></div>
-  </div>
-  <div class="list" id="operations">
-    <% @operations.each do |operation| %>
-      <%= render operation %>
+<% if can? :read, Operation %>
+  <div class="view-child">
+    <div class="view-top">
+      <%= link_to root_path do %> < Back <% end %>
+      <h1 class="view-title"><%= @group.name.capitalize %></h1>
+      <div>Total: $<%= @group.total %></div>
+    </div>
+    <div class="list" id="operations">
+      <% @operations.each do |operation| %>
+        <%= render operation %>
+      <% end %>
+    </div>
+    <% if can? :manage, Operation %>
+      <div class="add-btn">
+        <%= link_to "New", new_operation_path %>
+      </div>
     <% end %>
   </div>
-  <div class="add-btn">
-    <%= link_to "New", new_operation_path %>
-  </div>
-</div>
+<% end %>

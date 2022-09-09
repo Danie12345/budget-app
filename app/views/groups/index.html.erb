@@ -1,17 +1,21 @@
-<div class="view-child">
-  <div class="view-top">
-    <h1 class="view-title">Groups</h1>
-  </div>
-  <div class="list" id="groups">
-    <% @groups.each do |group| %>
-      <p>
-        <%= link_to group_operations_path(group.id) do %>
-          <%= render group %>
-        <% end %>
-      </p>
+<% if can? :read, Group %>
+  <div class="view-child">
+    <div class="view-top">
+      <h1 class="view-title">Groups</h1>
+    </div>
+    <div class="list" id="groups">
+      <% @groups.each do |group| %>
+        <p>
+          <%= link_to group_operations_path(group.id) do %>
+            <%= render group %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+    <% if can? :manage, Group %>
+      <div class="add-btn">
+        <%= link_to "New", new_group_path %>
+      </div>
     <% end %>
   </div>
-  <div class="add-btn">
-    <%= link_to "New", new_group_path %>
-  </div>
-</div>
+<% end %>

@@ -8,12 +8,17 @@
         <i class="fa-solid fa-xmark"></i>
       </div>
     </button>
+    <%= image_tag("logo.png", alt: 'Coin Track Logo', class: "logo-ico menu-ico", style: "width: 32px;") %>
   </div>
   <div data-toggle-target="menu" class="menu">
     <div class="menu-options">
       <%= link_to 'Home', root_path, method: :get %>
-      <%= link_to 'New Group', new_group_path, method: :get %>
-      <%= link_to 'New Operation', new_operation_path, method: :get %>
+      <% if can? :manage, Group %>
+        <%= link_to 'New Group', new_group_path, method: :get %>
+      <% end %>
+      <% if can? :manage, Operation %>
+        <%= link_to 'New Operation', new_operation_path, method: :get %>
+      <% end %>
       <%= button_to 'Logout', destroy_user_session_path, method: :delete, data: { turbo: false, action: 'click->toggle#menu' } %>
     </div>
     <%= image_tag("logo.png", alt: 'Coin Track Logo', class: "logo-ico menu-ico") %>
