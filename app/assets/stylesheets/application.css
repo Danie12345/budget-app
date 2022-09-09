@@ -70,3 +70,11 @@ p {
 .checks > input {
   width: unset !important;
 }
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#notice {
+  display: unset;
+}

@@ -65,4 +65,8 @@
   .list {
     @apply lists;
   }
+
+  .coin-track {
+    @apply font-mono;
+  }
 }

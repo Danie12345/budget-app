@@ -438,6 +438,10 @@ menu {
   height: calc(100vh - 32px - 80px - 32px);
 }
 
+.coin-track {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;

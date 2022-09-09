@@ -12,9 +12,19 @@
 
 .splash-logo-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
+}
+
+.logo-ico {
+  max-width: 160px;
+}
+
+.coin-track {
+  font-size: 32px;
+  letter-spacing: -1px;
 }
 
 .splash-logo {
