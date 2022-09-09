@@ -19,7 +19,7 @@ RSpec.describe 'Operations', type: :feature do
     end
 
     it 'shows the name of the page' do
-      expect(page).to have_content(@g1.name)
+      expect(page).to have_content(@g1.name.capitalize)
     end
 
     it 'shows the total amount of the group' do
@@ -27,8 +27,8 @@ RSpec.describe 'Operations', type: :feature do
     end
 
     it 'shows the amount of each operation' do
-      expect(page).to have_content("Amount: $#{@o1.amount}")
-      expect(page).to have_content("Amount: $#{@o2.amount}")
+      expect(page).to have_content("$#{@o1.amount}")
+      expect(page).to have_content("$#{@o2.amount}")
     end
 
     it 'shows a back button' do
@@ -82,7 +82,7 @@ RSpec.describe 'Operations', type: :feature do
       check @g1.name
       click_button 'Save'
       expect(page).to have_current_path(root_path)
-      expect(page).to have_content("Total: $#{@g1.total}")
+      expect(page).to have_content("$#{@g1.total}")
     end
 
     it 'creates a new operation from two categories and redirects to the home page' do
@@ -93,8 +93,8 @@ RSpec.describe 'Operations', type: :feature do
       check @g2.name
       click_button 'Save'
       expect(page).to have_current_path(root_path)
-      expect(page).to have_content("Total: $#{@g1.total}")
-      expect(page).to have_content("Total: $#{@g2.total}")
+      expect(page).to have_content("$#{@g1.total}")
+      expect(page).to have_content("$#{@g2.total}")
     end
 
     it 'goes back and cancels the operation creation' do

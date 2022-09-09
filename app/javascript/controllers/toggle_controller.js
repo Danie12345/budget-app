@@ -7,8 +7,8 @@ export default class extends Controller {
   initialize() {}
 
   connect() {
-    document.addEventListener('click', (e) => {    
-      var tag = e.target.closest('a') || '';
+    document.addEventListener('click', (e) => {
+      var tag = e.target.closest('a') || e.target.textContent.includes('Logout') || '';
       if (tag != '') {
         this.hide();
       }

@@ -21,16 +21,16 @@ RSpec.describe 'Groups', type: :feature do
 
     it 'shows all group icons' do
       image = page.all('img')
-      expect(image.size).to eq(2)
+      expect(image.size).to eq(3) # Two groups plus the logo inside the hidden menu
     end
 
     it 'shows the total amount of each group' do
-      expect(page).to have_content(@g1.total)
-      expect(page).to have_content(@g2.total)
+      expect(page).to have_content("$#{@g1.total}")
+      expect(page).to have_content("$#{@g2.total}")
     end
 
     it 'redirects to the operations index page when clicking on an individual group' do
-      click_on(@g1.name)
+      click_on(@g1.name.capitalize)
       expect(page).to have_current_path group_operations_path(@g1.id)
     end
   end
