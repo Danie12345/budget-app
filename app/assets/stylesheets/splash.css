@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   justify-content: flex-end;
   align-items: center;
+  background-color: #f1f1f1;
+  height: calc(100% + var(--top-height)) !important;
+  position: absolute;
+  top: 0;
 }
 
 .splash-logo-container {
