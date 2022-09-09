@@ -20,8 +20,8 @@ RSpec.describe 'Groups', type: :feature do
     end
 
     it 'shows all group icons' do
-      image = page.all('img')
-      expect(image.size).to eq(3) # Two groups plus the logo inside the hidden menu
+      image = find('.list').all('img')
+      expect(image.size).to eq(2)
     end
 
     it 'shows the total amount of each group' do
