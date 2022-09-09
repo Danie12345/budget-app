@@ -14,7 +14,7 @@
   <body>
     <div data-controller="toggle">
       <%= render "layouts/navbar" %>
-      <p class="notices" id="notice" data-toggle-target="notice" data-toggle-notice-value="<%= notice %>" ><%= notice %></p>
+      <p class="notices" id="notice" data-toggle-target="notice" data-toggle-notice-value="<%= alert %><%= notice %>" ><%= notice %><%= alert %></p>
       <div data-toggle-target="view" class="view">
         <%= yield %>
       </div>

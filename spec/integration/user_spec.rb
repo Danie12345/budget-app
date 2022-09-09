@@ -65,14 +65,14 @@ RSpec.describe 'Users', type: :feature do
         expect(page).to have_link('receive confirmation instructions')
       end
 
-      it 'redirects to the log in page when the user signs up' do
+      it 'redirects to the get-started page when the user signs up' do
         fill_in 'Name', with: user.name
         fill_in 'Email', with: user.email
         fill_in 'Password (6+ characters)', with: user.password
         fill_in 'Password confirmation', with: user.password
         click_button 'Sign up'
         User.last.confirm
-        expect(page).to have_current_path(new_user_session_path)
+        expect(page).to have_current_path(get_started_path)
         expect(user.name).to eq(User.last.name)
       end
 
