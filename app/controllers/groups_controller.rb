@@ -19,12 +19,18 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group = Group.new(group_params)
-    if @group.valid? && image_exists?(group_params[:icon])
-      if @group.save
-        redirect_to group_operations_path(@group.id), method: :get, notice: 'Group was successfully created!'
-      end
+    if !@group.valid?
+      flash.now[:notice] = 'Can\'t create group with missing info!'
+      render :new, status: :unprocessable_entity
+    elsif !image_exists?(group_params[:icon])
+      flash.now[:notice] = 'Can\'t find image with provided link!'
+      render :new, status: :not_found
+    elsif @group.save
+      flash[:notice] = 'Group was created successfully!'
+      redirect_to group_operations_path(@group.id), method: :get
     else
-      render :new, status: :unprocessable_entity, notice: 'Cannot create group with provided info!'
+      flash.now[:notice] = 'Something went wrong :c'
+      render :new, status: :unprocessable_entity
     end
   end
 

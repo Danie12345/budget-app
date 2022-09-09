@@ -17,15 +17,21 @@ class OperationsController < ApplicationController
   def create
     @operation = Operation.new(operation_params.except(:group_ids))
     @groups = Group.where(id: operation_params[:group_ids])
-    if @groups.empty?
-      redirect_to new_operation_path, notice: 'Operations need at least 1 group!'
+    if !@operation.valid?
+      flash.now[:notice] = 'Can\'t create operation with missing info!'
+      render :new, status: :unprocessable_entity
+    elsif @groups.empty?
+      flash.now[:notice] = 'Operations need at least 1 group!'
+      render :new, status: :unprocessable_entity
     elsif @operation.save
       @groups.each do |group|
         group.operations << @operation
       end
-      redirect_to root_path, notice: 'Operation was successfully created!'
+      flash[:notice] = 'Operation was created successfully!'
+      redirect_to root_path
     else
-      redirect_to new_operation_path, notice: 'Cannot create operation with provided info!'
+      flash.now[:notice] = 'Something went wrong :c'
+      render :new, status: :unprocessable_entity
     end
   end
 

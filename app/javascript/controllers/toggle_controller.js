@@ -7,7 +7,6 @@ export default class extends Controller {
   initialize() {}
 
   connect() {
-    console.log('connected');
     document.addEventListener('click', (e) => {    
       var tag = e.target.closest('a') || '';
       if (tag != '') {
@@ -17,12 +16,10 @@ export default class extends Controller {
   }
   
   timeoutNotice() {
-    console.log('trying to show notice');
-    if (this.noticeValue != '') {
-      console.log('we show notice here');
+    if (this.noticeTarget.textContent != '') {
       setTimeout(() => {
         this.noticeTarget.classList.add('active');
-      }, 1000);
+      }, 750);
       setTimeout(() => {
         this.noticeTarget.classList.remove('active');
       }, 3500);

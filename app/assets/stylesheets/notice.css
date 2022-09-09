@@ -14,7 +14,7 @@
   z-index: 10000;
   box-sizing: border-box;
   padding: 3px;
-  color: var(--text-color);
+  color: white;
   background-color: var(--main-bg-color);
 }
 
