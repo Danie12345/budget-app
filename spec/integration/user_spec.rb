@@ -46,7 +46,7 @@ RSpec.describe 'Users', type: :feature do
       end
 
       it 'shows the password input field' do
-        expect(page).to have_field('Password')
+        expect(page).to have_field('Password (6+ characters)')
       end
 
       it 'shows the password confirmation input field' do
@@ -68,7 +68,7 @@ RSpec.describe 'Users', type: :feature do
       it 'redirects to the log in page when the user signs up' do
         fill_in 'Name', with: user.name
         fill_in 'Email', with: user.email
-        fill_in 'Password', with: user.password
+        fill_in 'Password (6+ characters)', with: user.password
         fill_in 'Password confirmation', with: user.password
         click_button 'Sign up'
         User.last.confirm
@@ -95,7 +95,7 @@ RSpec.describe 'Users', type: :feature do
       end
 
       it 'shows the page title' do
-        expect(page).to have_content('Log in')
+        expect(page).to have_content('Log In')
       end
 
       it 'shows the email input field' do
