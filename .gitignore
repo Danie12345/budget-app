@@ -38,3 +38,6 @@ node_modules/
 
 # Coverage
 coverage
+
+# Environment variables
+.env

@@ -1,0 +1,15 @@
+<%= form_with model: @operation, url: operations_path do |form| %>
+  <div>
+    <%= form.text_field :name, placeholder: :name %>
+  </div>
+  <div>
+    <%= form.text_field :amount, placeholder: :amount %>
+  </div>
+  <div class="checks check-groups">
+    <%= form.label :groups %>
+    <%= form.collection_check_boxes(:group_ids, @client.groups, :id, :name) %>
+  </div>
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>

@@ -16,7 +16,7 @@ Capybara.register_driver :selenium_chrome_headless do |app|
 end
 
 RSpec.configure do |config|
-  config.before(:each, type: :system) do
-    driven_by :selenium_chrome_headless
+  config.before(:each, type: :feature) do
+    Capybara::Session.new(:selenium_chrome_headless)
   end
 end

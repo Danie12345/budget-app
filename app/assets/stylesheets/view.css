@@ -1,0 +1,125 @@
+.view {
+  position: fixed;
+  transition: all 0.5s ease;
+  width: 100%;
+  max-width: 768px;
+  height: calc(100% - var(--top-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.view.active {
+  transform: translateX(50%) scale(0.8);
+}
+
+.view-child {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.view-top {
+  background-color: transparent;
+  height: var(--top-height);
+  display: flex;
+  color: white;
+  justify-content: space-around;
+}
+
+.view-title {
+  text-align: center;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.list {
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.card {
+  background-color: white;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 4px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.card > a {
+  display: flex;
+  justify-content: space-between;
+  gap: 2px;
+  height: 92px;
+  width: 100%;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 68%;
+  gap: 12px;
+}
+
+.operation .data {
+  gap: 2px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: auto;
+  height: 46px;
+}
+
+div.operation > div.data > span {
+  width: auto;
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.image {
+  width: 28%;
+  max-width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-text {
+  color: var(--text-color);
+}
+
+.add-btn {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--second-bg-color) !important;
+  color: white;
+  font-size: 24px;
+}
+
+.add-btn > * {
+  border: 1px solid white;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  border-radius: 3px;
+}

@@ -1,0 +1,43 @@
+.menu {
+  position: fixed;
+  top: 50px;
+  right: 100%;
+  background-color: transparent;
+  width: 50%;
+  height: calc(100vh - 80px);
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transform: translateX(0);
+  overflow-y: auto;
+  transition: all 0.5s ease;
+  color: white;
+}
+
+.menu.active {
+  transform: translateX(100%);
+}
+
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  gap: 8px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.menu-options > * {
+  margin-left: 20%;
+}
+
+.menu-ico {
+  width: 50%;
+  align-self: center;
+  justify-self: center;
+}

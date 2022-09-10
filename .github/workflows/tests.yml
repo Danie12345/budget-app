@@ -1,8 +1,8 @@
 env:
   RUBY_VERSION: 3.1.2
-  POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: postgres
-  POSTGRES_DB: blog_test
+  DATABASE_USER: postgres
+  DATABASE_PASSWORD: postgres
+  POSTGRES_DB: budget_app_test
 
 name: Rails Specs
 on: pull_request
@@ -16,8 +16,8 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: ${{ env.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+          POSTGRES_USER: ${{ env.DATABASE_USER }}
+          POSTGRES_PASSWORD: ${{ env.DATABASE_PASSWORD }}
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-ruby@v1
@@ -34,7 +34,7 @@ jobs:
         env:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
-          bundle exec rails db:prepare RAILS_ENV=test
+          bundle exec rails db:create db:migrate RAILS_ENV=test
 
       - name: Run tests
         env:

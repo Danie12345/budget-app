@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+}
+
+/* vars */
+
+.blue {
+  background-color: #3778c2;
+}
+
+.green {
+  background-color: #5fb523;
+}
+
+.gray {
+  color: #434b54;
+}
+
+.headline {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.gral-text {
+  font-family: 'Monsterrat';
+  font-weight: light;
+}
+
+.view-children {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: calc(100vh - 32px);
+}
+
+.lists {
+  overflow-y: auto;
+  display: block;
+  width: 100%;
+  height: calc(100vh - 32px - 80px - 32px);
+}
+
+/* layers */
+
+@layer base {
+  body {
+    @apply bg-gradient-to-tr from-blue-300 blue;
+  }
+
+  menu {
+    @apply gral-text;
+  }
+
+  .view-child {
+    @apply view-children;
+  }
+
+  .list {
+    @apply lists;
+  }
+
+  .coin-track {
+    @apply font-mono;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="form">
+  <div class="form-top">
+    <%= link_to get_started_path do %> < Cancel <% end %>
+    <h2 class="form-title">Resend instructions</h2>
+  </div>
+  <div class="form-view not-logged">
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }, data: { turbo: false }) do |f| %>
+      <div>
+        <%= f.email_field :email, placeholder: :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Resend confirmation instructions" %>
+      </div>
+      <div class="other-actions">
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+  </div>
+</div>

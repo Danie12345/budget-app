@@ -83,12 +83,11 @@ GEM
     ast (2.4.2)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    bootsnap (1.13.0)
-      msgpack (~> 1.2)
     builder (3.2.4)
     bullet (7.0.3)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -107,14 +106,27 @@ GEM
     diff-lcs (1.5.0)
     digest (3.1.0)
     docile (1.4.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.11.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faraday (2.5.2)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.0)
+    ffi (1.15.5)
+    ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    httparty (0.20.0)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -139,9 +151,12 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
     minitest (5.16.2)
-    msgpack (1.5.4)
+    multi_xml (0.6.0)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -157,6 +172,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.8-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -164,6 +181,7 @@ GEM
     parser (3.1.2.1)
       ast (~> 2.4.1)
     pg (1.4.3)
+    pg (1.4.3-x64-mingw-ucrt)
     public_suffix (5.0.0)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -236,6 +254,7 @@ GEM
     rubocop-ast (1.21.0)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
@@ -266,8 +285,13 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2022.3)
+      tzinfo (>= 1.0.0)
     unicode-display_width (2.2.0)
     uniform_notifier (1.16.0)
+    validate_url (1.0.15)
+      activemodel (>= 3.0.0)
+      public_suffix
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -288,15 +312,20 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
-  bootsnap
   bullet
+  cancancan
   capybara
   debug
   devise!
+  dotenv-rails
   factory_bot_rails
+  faraday
+  ffi
+  httparty
   importmap-rails
   jbuilder
   letter_opener
@@ -310,6 +339,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  validate_url
   web-console
   webdrivers (~> 5.0)
 
@@ -317,4 +347,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.18
+   2.3.21

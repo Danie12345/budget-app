@@ -1,0 +1,9 @@
+<div class="form">
+  <div class="form-top">
+    <%= link_to root_path do %> < Cancel <% end %>
+    <h1 class="form-title">New group</h1>
+  </div>
+  <div class="form-view logged">
+    <%= render "form", group: @group %>
+  </div>
+</div>
